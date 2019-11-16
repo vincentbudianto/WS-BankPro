@@ -17,6 +17,11 @@
         url-pattern='/services/GetHistory'/>
 
     <endpoint
+        name='Bank Pro Web Services - Get Virtual Number'
+        implementation='services.GetVirtualNumber'
+        url-pattern='/services/GetVirtualNumber'/>
+
+    <endpoint
         name='Bank Pro Web Services - Login'
         implementation='services.Login'
         url-pattern='/services/Login'/>
