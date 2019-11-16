@@ -12,6 +12,11 @@
         url-pattern='/services/GetCustomerBalance'/>
 
     <endpoint
+        name='Bank Pro Web Services - Get Customer Transactions History'
+        implementation='services.GetHistory'
+        url-pattern='/services/GetHistory'/>
+
+    <endpoint
         name='Bank Pro Web Services - Login'
         implementation='services.Login'
         url-pattern='/services/Login'/>
