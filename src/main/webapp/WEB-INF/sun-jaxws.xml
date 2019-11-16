@@ -7,6 +7,11 @@
         url-pattern='/services/AddBalance'/>
 
     <endpoint
+        name='Bank Pro Web Services - Check Transactions'
+        implementation='services.CheckTransactions'
+        url-pattern='/services/CheckTransactions'/>
+
+    <endpoint
         name='Bank Pro Web Services - Get Account Number'
         implementation='services.GetAccountNumber'
         url-pattern='/services/GetAccountNumber'/>
@@ -20,6 +25,11 @@
         name='Bank Pro Web Services - Get Customer Transactions History'
         implementation='services.GetHistory'
         url-pattern='/services/GetHistory'/>
+
+    <endpoint
+        name='Bank Pro Web Services - Get Virtual Number'
+        implementation='services.GetVirtualNumber'
+        url-pattern='/services/GetVirtualNumber'/>
 
     <endpoint
         name='Bank Pro Web Services - Login'
