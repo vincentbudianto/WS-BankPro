@@ -2,6 +2,11 @@
 
 <endpoints xmlns='http://java.sun.com/xml/ns/jax-ws/ri/runtime' version='2.0'>
     <endpoint
+        name='Bank Pro Web Services - Add Balance'
+        implementation='services.AddBalance'
+        url-pattern='/services/AddBalance'/>
+
+    <endpoint
         name='Bank Pro Web Services - Get Account Number'
         implementation='services.GetAccountNumber'
         url-pattern='/services/GetAccountNumber'/>
