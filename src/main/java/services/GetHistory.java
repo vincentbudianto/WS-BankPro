@@ -1,4 +1,5 @@
 package services;
+import data.History;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,8 +10,10 @@ import javax.xml.bind.annotation.XmlElement;
 @WebService()
 public class GetHistory {
     @WebMethod
-    public String GetHistory(@XmlElement(name = "account") String account) {
-       try {
+    public History GetHistory(@XmlElement(name = "account") String account) {
+        History result = new History();
+
+        try {
             Class.forName("org.mariadb.jdbc.Driver").newInstance();
             Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bank_pro","root", "");
             Statement stmt = conn.createStatement();
@@ -18,16 +21,37 @@ public class GetHistory {
             ResultSet res = stmt.executeQuery(query);
 
             if (res.next()) {
-                return "200";
+                res.beforeFirst();
+
+                List<String> dataTime = new ArrayList<String>();
+                List<String> dataType = new ArrayList<String>();
+                List<String> dataAmount = new ArrayList<String>();
+                List<String> dataAccount = new ArrayList<String>();
+
+                result.setStatus(200);
+
+                while (res.next()) {
+                    dataTime.add(res.getString("transactionTime"));
+                    dataType.add(res.getString("transactionType"));
+                    dataAmount.add(res.getString("amount"));
+                    dataAccount.add(res.getString("targetAccount"));
+                }
+
+                result.setTransactionTime(dataTime);
+                result.setTransactionType(dataType);
+                result.setAmount(dataAmount);
+                result.setTargetAccount(dataAccount);
             } else {
-                return "300";
+                result.setStatus(300);
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            return "500";
+            result.setStatus(500);
         } catch (Exception e) {
             e.printStackTrace();
-            return "400";
+            result.setStatus(400);
+        } finally {
+            return result;
         }
     }
 }
