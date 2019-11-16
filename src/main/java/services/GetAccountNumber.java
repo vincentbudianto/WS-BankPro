@@ -1,4 +1,5 @@
 package services;
+import data.AccountNumber;
 import java.sql.*;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -7,7 +8,9 @@ import javax.xml.bind.annotation.XmlElement;
 @WebService()
 public class GetAccountNumber {
     @WebMethod
-    public String GetAccountNumber(@XmlElement(name = "account") String account) {
+    public AccountNumber GetAccountNumber(@XmlElement(name = "account") String account) {
+        AccountNumber result = new AccountNumber();
+
         try {
             Class.forName("org.mariadb.jdbc.Driver").newInstance();
             Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bank_pro","root", "");
@@ -16,16 +19,19 @@ public class GetAccountNumber {
             ResultSet res = stmt.executeQuery(query);
 
             if (res.next()) {
-                return "200";
+                result.setStatus(200);
+                result.setAccountNumber(res.getString("accountNumber"));
             } else {
-                return "300";
+                result.setStatus(300);
             }
         } catch(SQLException e) {
             e.printStackTrace();
-            return "500";
+            result.setStatus(500);
         } catch (Exception e) {
             e.printStackTrace();
-            return "400";
+            result.setStatus(400);
+        } finally {
+            return result;
         }
     }
 }
