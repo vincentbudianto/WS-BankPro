@@ -15,4 +15,9 @@
         name='Bank Pro Web Services - Register'
         implementation='services.Register'
         url-pattern='/services/Register'/>
+
+    <endpoint
+        name='Bank Pro Web Services - Transfer'
+        implementation='services.Transfer'
+        url-pattern='/services/Transfer'/>
 </endpoints>
