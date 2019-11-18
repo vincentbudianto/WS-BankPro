@@ -18,7 +18,7 @@
 ## Deskripsi Singkat
 Web service Bank diimplementasikan di atas ​java servlet menggunakan JAX-WS dengan ​protokol SOAP​. ​Web service ini digunakan oleh Aplikasi Bank Pro dan Aplikasi Engima.
 
-Layanan yang disediakan oleh ​web service ​ ini adalah:
+Layanan yang disediakan oleh ​web service ​ini adalah:
 1. Validasi nomor rekening. Jika nomor rekening terdaftar di basis data, maka nomor tersebut valid.
 
 2. Memberikan data rekening seorang nasabah. Data pengguna meliputi nama pengguna, nomor kartu, saldo terakhir, dan riwayat transaksi (debit dan kredit).
