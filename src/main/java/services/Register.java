@@ -11,7 +11,7 @@ public class Register {
             @XmlElement(name = "name") String name) {
         try {
             Class.forName("org.mariadb.jdbc.Driver").newInstance();
-            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bank_pro","root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bank_pro", "root", "");
             Statement stmt = conn.createStatement();
             String query = "insert into customers (accountNumber, customerName, balance) values (" + account + ", '" + name + "', 0)";
             stmt.executeQuery(query);
@@ -21,8 +21,7 @@ public class Register {
         } catch (Exception e) {
             e.printStackTrace();
             return "400";
-        }
-        finally {
+        } finally {
             return "200";
         }
     }

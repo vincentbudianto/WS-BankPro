@@ -16,11 +16,19 @@ public class Balance {
     @XmlElement(name = "balance", required = true)
     private String balance;
 
-    public int getStatus() { return status; }
+    public int getStatus() {
+        return status;
+    }
 
-    public void setStatus(int status) { this.status = status; }
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
-    public String getBalance() { return balance; }
+    public String getBalance() {
+        return balance;
+    }
 
-    public void setBalance(String balance) { this.balance = balance; }
+    public void setBalance(String balance) {
+        this.balance = balance;
+    }
 }

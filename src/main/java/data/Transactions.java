@@ -26,23 +26,43 @@ public class Transactions {
     @XmlElement(name = "targetAccount", required = true)
     private List<String> targetAccount;
 
-    public int getStatus() { return status; }
+    public int getStatus() {
+        return status;
+    }
 
-    public void setStatus(int status) { this.status = status; }
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
-    public List<String> getTransactionTime() { return transactionTime; }
+    public List<String> getTransactionTime() {
+        return transactionTime;
+    }
 
-    public void setTransactionTime(List<String> transactionTime) { this.transactionTime = transactionTime; }
+    public void setTransactionTime(List<String> transactionTime) {
+        this.transactionTime = transactionTime;
+    }
 
-    public List<String> getTransactionType() { return transactionType; }
+    public List<String> getTransactionType() {
+        return transactionType;
+    }
 
-    public void setTransactionType(List<String> transactionType) { this.transactionType = transactionType; }
+    public void setTransactionType(List<String> transactionType) {
+        this.transactionType = transactionType;
+    }
 
-    public List<String> getAmount() { return amount; }
+    public List<String> getAmount() {
+        return amount;
+    }
 
-    public void setAmount(List<String> amount) { this.amount = amount; }
+    public void setAmount(List<String> amount) {
+        this.amount = amount;
+    }
 
-    public List<String> getTargetAccount() { return targetAccount; }
+    public List<String> getTargetAccount() {
+        return targetAccount;
+    }
 
-    public void setTargetAccount(List<String> targetAccount) { this.targetAccount = targetAccount; }
+    public void setTargetAccount(List<String> targetAccount) {
+        this.targetAccount = targetAccount;
+    }
 }

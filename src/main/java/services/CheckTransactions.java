@@ -20,7 +20,7 @@ public class CheckTransactions {
             Date endDate = new Date(Long.parseLong(endTime));
 
             Class.forName("org.mariadb.jdbc.Driver").newInstance();
-            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bank_pro","root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bank_pro", "root", "");
             Statement stmt = conn.createStatement();
             String query = "select * from transactions left outer join virtual_accounts on transactions.accountNumber = virtual_accounts.accountNumber where (transactions.accountNumber = " + account + " or virtual_accounts.virtualNumber = " + account + ") and transactionType = '" + type + "' and amount = " + amount + " and (transactionTime >= '" + formatDate.format(startDate) + "' and transactionTime <= '" + formatDate.format(endDate) + "') group by transactionTime order by transactionTime desc";
             ResultSet res = stmt.executeQuery(query);
@@ -49,7 +49,7 @@ public class CheckTransactions {
             } else {
                 result.setStatus(300);
             }
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             result.setStatus(500);
         } catch (Exception e) {

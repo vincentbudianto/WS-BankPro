@@ -11,7 +11,7 @@ public class AddBalance {
             @XmlElement(name = "amount") String amount) {
         try {
             Class.forName("org.mariadb.jdbc.Driver").newInstance();
-            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bank_pro","root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bank_pro", "root", "");
             Statement stmt = conn.createStatement();
             String query1 = "insert into transactions (accountNumber, transactionType, amount, targetAccount) values (" + account + ", 'kredit', " + amount + ", " + account + ")";
             String query2 = "update customers set balance = balance + " + amount + " where accountNumber = " + account;
@@ -24,8 +24,7 @@ public class AddBalance {
         } catch (Exception e) {
             e.printStackTrace();
             return "400";
-        }
-        finally {
+        } finally {
             return "200";
         }
     }

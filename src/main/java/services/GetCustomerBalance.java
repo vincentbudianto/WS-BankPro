@@ -13,7 +13,7 @@ public class GetCustomerBalance {
 
         try {
             Class.forName("org.mariadb.jdbc.Driver").newInstance();
-            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bank_pro","root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bank_pro", "root", "");
             Statement stmt = conn.createStatement();
             String query = "select balance from customers where accountNumber = " + account;
             ResultSet res = stmt.executeQuery(query);

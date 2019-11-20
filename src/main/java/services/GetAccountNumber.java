@@ -13,7 +13,7 @@ public class GetAccountNumber {
 
         try {
             Class.forName("org.mariadb.jdbc.Driver").newInstance();
-            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bank_pro","root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bank_pro", "root", "");
             Statement stmt = conn.createStatement();
             String query = "select * from customers right outer join virtual_accounts on customers.accountNumber = virtual_accounts.accountNumber where customers.accountNumber = " + account + " or virtual_accounts.virtualNumber = " + account;
             ResultSet res = stmt.executeQuery(query);
@@ -24,7 +24,7 @@ public class GetAccountNumber {
             } else {
                 result.setStatus(300);
             }
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             result.setStatus(500);
         } catch (Exception e) {

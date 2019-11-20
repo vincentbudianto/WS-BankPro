@@ -16,11 +16,19 @@ public class VirtualNumber {
     @XmlElement(name = "virtualNumber", required = true)
     private String virtualNumber;
 
-    public int getStatus() { return status; }
+    public int getStatus() {
+        return status;
+    }
 
-    public void setStatus(int status) { this.status = status; }
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
-    public String getVirtualNumber() { return virtualNumber; }
+    public String getVirtualNumber() {
+        return virtualNumber;
+    }
 
-    public void setVirtualNumber(String virtualNumber) { this.virtualNumber = virtualNumber; }
+    public void setVirtualNumber(String virtualNumber) {
+        this.virtualNumber = virtualNumber;
+    }
 }

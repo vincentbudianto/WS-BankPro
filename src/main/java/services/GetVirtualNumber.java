@@ -32,13 +32,13 @@ public class GetVirtualNumber {
             Long random = Long.parseLong(ShuffleString(Long.toString(10000000000L - Instant.now().getEpochSecond())));
 
             if (random < 1000000000L) {
-                random += (long)(Math.random() * ((9 - 1) + 1)) * 1000000000L;
+                random += (long) (Math.random() * ((9 - 1) + 1)) * 1000000000L;
             }
 
             String virtual = Long.toString(random) + ShuffleString(senderAccount).substring(0, 6);
 
             Class.forName("org.mariadb.jdbc.Driver").newInstance();
-            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bank_pro","root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bank_pro", "root", "");
             Statement stmt = conn.createStatement();
             String query = "insert into virtual_accounts (accountNumber, virtualNumber) values (" + receiverAccount + ", " + virtual + ")";
             stmt.executeQuery(query);

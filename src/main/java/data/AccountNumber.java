@@ -16,11 +16,19 @@ public class AccountNumber {
     @XmlElement(name = "accountNumber", required = true)
     private String accountNumber;
 
-    public int getStatus() { return status; }
+    public int getStatus() {
+        return status;
+    }
 
-    public void setStatus(int status) { this.status = status; }
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
-    public String getAccountNumber() { return accountNumber; }
+    public String getAccountNumber() {
+        return accountNumber;
+    }
 
-    public void setAccountNumber(String accountNumber) { this.accountNumber = accountNumber; }
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
 }

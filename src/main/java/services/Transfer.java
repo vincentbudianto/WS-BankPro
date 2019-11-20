@@ -10,7 +10,7 @@ public class Transfer {
     public String Transfer(@XmlElement(name = "account") String account, @XmlElement(name = "amount") String amount, @XmlElement(name = "targetAccount") String targetAccount, @XmlElement(name = "realAccount") String realAccount) {
         try {
             Class.forName("org.mariadb.jdbc.Driver").newInstance();
-            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bank_pro","root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bank_pro", "root", "");
             Statement stmt = conn.createStatement();
             String query1 = "insert into transactions (accountNumber, transactionType, amount, targetAccount) values (" + account + ", 'debit', " + amount + ", " + targetAccount + ")";
             String query2 = "update customers set balance = balance - " + amount + " where accountNumber = " + account;
@@ -21,7 +21,7 @@ public class Transfer {
             stmt.addBatch(query3);
             stmt.addBatch(query4);
             stmt.executeBatch();
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             return "500";
         } catch (Exception e) {

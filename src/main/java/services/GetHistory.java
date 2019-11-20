@@ -15,7 +15,7 @@ public class GetHistory {
 
         try {
             Class.forName("org.mariadb.jdbc.Driver").newInstance();
-            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bank_pro","root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/bank_pro", "root", "");
             Statement stmt = conn.createStatement();
             String query = "select * from transactions where accountNumber = " + account + " order by transactionTime desc";
             ResultSet res = stmt.executeQuery(query);
