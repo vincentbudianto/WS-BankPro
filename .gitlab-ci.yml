@@ -5,17 +5,17 @@ before_script:
 
 stages:
   - test
-  # - deploy
+  - deploy
 
 lint:
   stage: test
   script:
-    - mvn package
+    - mvn checkstyle:checkstyle
 
-# deployToAWS:
-#   only:
-#     # - master
-#     - developer
-#   stage: deploy
-#   script:
-#     - bash deploy.sh
+deployToAWS:
+  only:
+    # - master
+    - developer
+  stage: deploy
+  script:
+    - bash deploy.sh
