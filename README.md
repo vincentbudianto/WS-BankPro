@@ -1,7 +1,7 @@
 <h1 align="center">
     <b>
         <br>
-        # Tugas Besar 2 IF3110 Pengembangan Aplikasi Berbasis Web
+        # Tugas Besar 2 IF3110 Pengembangan Aplikasi Berbasis Web / IF3159 Dasar Pembangunan Perangakat Lunak
         <br>
     </b>
 </h1>
