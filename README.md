@@ -33,6 +33,18 @@ Layanan yang disediakan oleh ​web service ​ini adalah:
 
 <br>
 
+Cara menjalankan:
+
+| local                                                                                               |
+|:----------------------------------------------------------------------------------------------------|
+| ketikan ```mvn package``` pada direktori root web bank pro                                          |
+| copy file web_service_bank_pro yang ada di dalam folder target ke folder webapps pada folder tomcat |
+| jalankan server tomcat                                                                              |
+
+| AWS EC2                                                                                             |
+|:----------------------------------------------------------------------------------------------------|
+| ketikan ```http://18.207.202.246:8080/web_service_bank_pro/services/Login``` pada web browser       |
+
 ## Basis Data Web Service
 ![](screenshots/database_diagram.png)
 
@@ -41,6 +53,16 @@ Layanan yang disediakan oleh ​web service ​ini adalah:
 | 1     | customers        | Relasi yang berisi data nasabah (terdiri dari nomor akun nasabah, nama nasabah dan jumlah saldo nasabah) |
 | 2     | transactions     | Relasi yang berisi data transaksi nasabah (terdiri dari id transaksi, nomor akun nasabah, tipe transaksi, besar transaksi, nomor akun tujuan transaksi (dapat berupa nomor akun atau nomor akun virtual) dan waktu transaksi dilakukan) |
 | 3     | virtual_accounts | Relasi yang berisi data akun virtual nasabah (terdiri dari nomor akun nasabah dan nomor akun virtual nasabah) |
+
+<br>
+
+## Pembagian Tugas
+
+### CI/CD
+| Number | Feature                | Assignment |
+|:------:|:-----------------------|:-----------|
+| 1.     | Linting                | 13517137   |
+| 2.     | Deployment to AWS EC2  | 13517137   |
 
 <p align="center">
     <b>
