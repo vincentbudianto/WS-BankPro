@@ -1,3 +1,6 @@
+variables:
+  DOCKER_DRIVER: overlay2
+
 image: maven:3.3-jdk-8
 
 before_script:
@@ -14,7 +17,7 @@ lint:
 
 deployToAWS:
   only:
-    # - master
+    - master
     - developer
   stage: deploy
   script:
