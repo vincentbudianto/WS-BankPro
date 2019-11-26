@@ -1,4 +1,4 @@
-<h1 align="center">
+<h1 align="center"></h1>
     <b>
         <br>
         # Tugas Besar 2 IF3110 Pengembangan Aplikasi Berbasis Web / IF3159 Dasar Pembangunan Perangakat Lunak
@@ -35,15 +35,16 @@ Layanan yang disediakan oleh ​web service ​ini adalah:
 
 Cara menjalankan:
 
-| local                                                                                               |
-|:----------------------------------------------------------------------------------------------------|
-| ketikan ```mvn package``` pada direktori root web bank pro                                          |
-| copy file web_service_bank_pro yang ada di dalam folder target ke folder webapps pada folder tomcat |
-| jalankan server tomcat                                                                              |
+| local                                                                                                        |
+|:-------------------------------------------------------------------------------------------------------------|
+| ketikan ```mvn package``` pada direktori root web bank pro                                                   |
+| copy file web_service_bank_pro yang ada di dalam folder target ke folder webapps pada folder tomcat          |
+| jalankan server tomcat                                                                                       |
 
-| AWS EC2                                                                                             |
-|:----------------------------------------------------------------------------------------------------|
-| ketikan ```http://18.207.202.246:8080/web_service_bank_pro/services/Login``` pada web browser       |
+| AWS EC2                                                                                                      |
+|:-------------------------------------------------------------------------------------------------------------|
+| ketikan ```http://3.83.91.13:8080/web_service_bank_pro``` pada web browser                                   |
+| ketikan ```http://3.83.91.13:8080/web_service_bank_pro/services/Login``` pada web browser untuk melihat list endpoint |
 
 ## Basis Data Web Service
 ![](screenshots/database_diagram.png)
